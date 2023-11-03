@@ -42,6 +42,7 @@ import com.borred.mytwitter.data.changeUserName
 import com.borred.mytwitter.data.deletePost
 import com.borred.mytwitter.data.editPost
 import com.borred.mytwitter.data.postsFlow
+import com.borred.mytwitter.data.profileFlow
 import com.borred.mytwitter.model.PostModel
 import com.borred.mytwitter.ui.Screen
 
@@ -200,7 +201,7 @@ fun Post(
         Row {
             Text(text = "Author: ", color = Color.Gray)
             Spacer(modifier = Modifier.size(8.dp))
-            Text(text = post.username)
+            Text(text = profileFlow.collectAsState().value.username)
         }
         Spacer(modifier = Modifier.size(8.dp))
         Row {
